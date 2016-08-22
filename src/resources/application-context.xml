@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="person" class="lab.model.UsualPerson" scope="prototype">
+        <property name="name" value="John Smith"/>
+        <property name="age" value="35"/>
+        <property name="height" value="1.78F"/>
+        <property name="isProgrammer" value="true"/>
+        <property name="country" ref="country"/>
+        <property name="contacts">
+            <list>
+                <value>asd@asd.ru</value>
+                <value>+7-234-456-67-89</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="country" class="lab.model.Country">
+        <property name="id" value="1"/>
+        <property name="name" value="Russia"/>
+        <property name="codeName" value="RU"/>
+    </bean>
+</beans>
